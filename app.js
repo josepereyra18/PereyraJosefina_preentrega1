@@ -1,6 +1,6 @@
 const fs = require('fs').promises
 
-class productManager {
+class ProductManager {
     constructor (){
         this.productsFile = 'productos.json';
     }
@@ -106,31 +106,31 @@ class productManager {
     }
 }
 
-const ProductManager = new productManager();
+const productManager = new ProductManager();
 
-    // ProductManager.addProduct({
+    // productManager.addProduct({
     // title: "producto prueba",
     // description:"Este es un producto prueba",
     // price:200,
     // thumbnail:"”Sin imagen”",
-    // code:"abc123",
+    // code:"456",
     // stock:25
 
     // })
 
-    // ProductManager.getProducts()
+    // productManager.getProducts()
     // .then((productos)=> console.log("Productos :" ,productos))
     // .catch((error)=> console.log('error al consultar productos', error));
 
 
-    // ProductManager.getProductById(5)
+    // productManager.getProductById(5)
     // .then((producto)=> console.log("Producto Buscado :", producto))
     // .catch((error)=> console.log('error al consultar producto', error));
 
-    // ProductManager.modificarProduct(1, "PEPAS!!!!!", "Este es un producto prueba modificado", 300, "”Sin imagen”", "abc123", 25)
+    // productManager.modificarProduct(1, "PEPAS!!!!!", "Este es un producto prueba modificado", 300, "”Sin imagen”", "abc123", 25)
     // .then(()=> console.log("Producto modificado"))
     // .catch((error)=> console.log('error al modificar producto', error));
 
-    // ProductManager.eliminarProducto(1)
+    // productManager.eliminarProducto(1)
     // .then(()=> console.log("Producto eliminado"))
     // .catch((error)=> console.log('error al eliminar producto', error));
