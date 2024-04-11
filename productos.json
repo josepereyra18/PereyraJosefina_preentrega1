@@ -1,1 +1,11 @@
-[]
+[
+  {
+    "title": "jujuju",
+    "description": "Este es un producto prueba",
+    "price": 105,
+    "thumbnail": "”Sin imagen”",
+    "code": "j890",
+    "stock": 25,
+    "id": 1
+  }
+]
