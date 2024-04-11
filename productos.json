@@ -1,11 +1,56 @@
 [
   {
-    "title": "jujuju",
-    "description": "Este es un producto prueba",
-    "price": 105,
-    "thumbnail": "”Sin imagen”",
-    "code": "j890",
+    "title": "Pepas",
+    "description": "pepas muy ricas",
+    "price": 300,
+    "thumbnail": "fotos de pepas",
+    "code": "pepas123",
     "stock": 25,
     "id": 1
+  },
+  {
+    "title": "Coca-cola",
+    "description": "muy refrescante",
+    "price": 390,
+    "thumbnail": "fotos de coca-cola",
+    "code": "coquita123",
+    "stock": 80,
+    "id": 2
+  },
+  {
+    "title": "Muzzarella",
+    "description": "Muzzarella muy rica",
+    "price": 100,
+    "thumbnail": "fotos de pizzas",
+    "code": "muzza123",
+    "stock": 85,
+    "id": 3
+  },
+  {
+    "title": "Jugo de Naranja",
+    "description": "jugo de naranja natural",
+    "price": 400,
+    "thumbnail": "fotos de jugos de naranja",
+    "code": "juguito123",
+    "stock": 100,
+    "id": 4
+  },
+  {
+    "title": "Palta",
+    "description": "Palta de la buena",
+    "price": 40000000,
+    "thumbnail": "fotos de paltas",
+    "code": "paltita123",
+    "stock": 20,
+    "id": 5
+  },
+  {
+    "title": "Comida Preparada",
+    "description": "Carne con papitas",
+    "price": 3000,
+    "thumbnail": "fotos de la comida",
+    "code": "comida123",
+    "stock": 15,
+    "id": 6
   }
 ]

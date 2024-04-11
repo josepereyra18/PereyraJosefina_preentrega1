@@ -1,13 +1,11 @@
-//Corregido!! con this.product
-
 const fs = require('fs').promises;
 
 
 class ProductManager {
     constructor (){
         this.productsFile = 'productos.json';
-        this.leerProductos();
         this.products = [];
+        this.leerProductos();
     }
 
     async leerProductos (){
@@ -23,9 +21,9 @@ class ProductManager {
         }
     }
 
-
     async addProduct(product){
         try {
+            await this.leerProductos();
             const codigoEncontrado = this.products.find((producto) => producto.code === product.code);
             if (codigoEncontrado) {
                 console.log('El codigo ya existe');
@@ -39,6 +37,7 @@ class ProductManager {
             const producto = { ...product, id: idProducto };
             this.products.push(producto);
             await fs.writeFile(this.productsFile, JSON.stringify(this.products, null, 2));
+            console.log('Producto agregado');
         } catch (error) {
             console.log('Error al agregar producto', error);
         }
@@ -70,6 +69,7 @@ class ProductManager {
 
     async modificarProduct(id, title, description, price, thumbnail, code, stock){
         try{
+            await this.leerProductos();
             const productoEncontrado = this.products.find((producto)=> producto.id === id);
             if (!productoEncontrado){
                 console.error('Not found');
@@ -93,6 +93,7 @@ class ProductManager {
 
     async eliminarProducto(id){
         try{
+            await this.leerProductos();
             const productoEncontrado = this.products.find((product)=> product.id === id);
             if (!productoEncontrado){
                 console.error('Not found');
@@ -107,32 +108,4 @@ class ProductManager {
     }
 }
 
-
-const productManager = new ProductManager();
-
-    productManager.addProduct({
-    title: "jujuju",
-    description:"Este es un producto prueba",
-    price:105,
-    thumbnail:"”Sin imagen”",
-    code:"j890",
-    stock:25
-
-    })
-
-    // productManager.getProducts()
-    // .then((productos)=> console.log("Productos :" ,productos))
-    // .catch((error)=> console.log('error al consultar productos', error));
-
-
-    // productManager.getProductById(1)
-    // .then((producto)=> console.log("Producto Buscado :", producto))
-    // .catch((error)=> console.log('error al consultar producto', error));
-
-    // productManager.modificarProduct(1, "PEPAS!!!!!", "Este es un producto prueba modificado", 300, "”Sin imagen”", "abc123", 25)
-    // .then(()=> console.log("Producto modificado"))
-    // .catch((error)=> console.log('error al modificar producto', error));
-
-    // productManager.eliminarProducto(1)
-    // .then(()=> console.log("Producto eliminado"))
-    // .catch((error)=> console.log('error al eliminar producto', error));
+module.exports = ProductManager;
